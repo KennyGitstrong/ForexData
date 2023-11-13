@@ -37,10 +37,13 @@ object MyForexData {
     result.show()
 
     // Write to CSV
-    result.write.mode("overwrite").csv("c:/users/Kenny Makenzo/desktop/financial_data.csv")
+    val csvPath = result.write.mode("overwrite").csv("c:/users/Kenny Makenzo/desktop/financial_data.csv")
 
     // Write to Parquet
-    result.write.mode("overwrite").parquet("c:/users/Kenny Makenzo/desktop/financial_data.parquet")
+    val parqPath = result.write.mode("overwrite").parquet("c:/users/Kenny Makenzo/desktop/financial_data.parquet")
+
+    // Show the result
+    result.show()
 
     // Stop the Spark session
     spark.stop()
